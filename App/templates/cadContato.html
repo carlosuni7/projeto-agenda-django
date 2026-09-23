@@ -1,0 +1,39 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% bootstrap_css %}
+    <title>Cadastro de Contato</title>
+</head>
+<body>
+    <main class="container">
+
+        <h1>Cadastro de Contato</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+
+                <p>{{ message }} </p>
+
+            {% endfor %}
+        {% endif %}
+
+        <form action="{% url 'cadContato' %}" method="POST" class="form-bootstrap"autocomplete="off">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            <p></p>
+            
+                <button type="submit" id="btnSalvar" class="btn btn-primary">Salvar</button>
+            
+            
+        </form>
+    </main>
+
+    {% bootstrap_javascript %}
+</body>
+</html>

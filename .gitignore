@@ -1,0 +1,16 @@
+# Ambiente virtual
+venv/
+.venv/
+env/
+
+# Arquivos do Python / Cache
+__pycache__/
+*.pyc
+
+# Banco de dados local (opcional, mas recomendado não versionar dados locais)
+db.sqlite3
+
+# Arquivos de configuração e chaves secretas
+.env
+.vscode/
+.idea/
