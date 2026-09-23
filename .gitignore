@@ -13,5 +13,6 @@ db.sqlite3
 # Arquivos de configuração e chaves secretas
 .env
 .vscode/
-.idea/
+.idea
+
 meuAmbVir
