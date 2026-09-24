@@ -8,7 +8,7 @@ __pycache__/
 *.pyc
 
 # Banco de dados local (opcional, mas recomendado não versionar dados locais)
-db.sqlite3
+*db.sqlite3
 
 # Arquivos de configuração e chaves secretas
 .env
