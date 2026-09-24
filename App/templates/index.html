@@ -1,36 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
     <title>Agenda Django</title>
-</head>
-<body>
-    <h1>Agenda de Django</h1>
-    {% comment %} <h2>Powered by: <img src="{% static 'imagens/naruto-logo.jpg' %}" alt=""></h2> {% endcomment %}
-    <button onclick="CliqueAqui()">Clique Aqui</button>
-
-    <p>Agenda de Contatos</p>
-    <div>
-        <a href="{% url 'cadContato' %}" class="btn btn-cadastro">Cadastrar Contato</a>
+  </head>
+  <body>
+    <div class="bg-header">
+      <img src="{% static 'imagens/bg-header.png' %}" alt="" />
     </div>
-    <table border="1">
+    <header class="header">
+      <nav class="nav-bar">
+        <a href="{% url 'cadContato' %}" class="link btn btn-cadastro">Cadastrar Contato</a>
+      </nav>
+    </header>
+    {% comment %} <h2>Powered by: <img src="{% static 'imagens/naruto-logo.jpg' %}" alt="" /></h2> {% endcomment %}
+    {% comment %} <button onclick="CliqueAqui()">Clique Aqui</button> {% endcomment %}
+
+    <div class="table-bg">
+      <table class="table-main">
         {% for pessoa in lista %}
-        <tr>
-            <td><a href="{% url 'usuario' pessoa.id %}">{{ pessoa.Nome }}<a/></td>
-        </tr>
-        <td>{{ pessoa.Email}}</td>
-        <td>
-            <a href="{% url 'altContato' pessoa.id %}" class="btn btn-warning">Alterar Contato</a>
-            <a href="{% url 'excContato' pessoa.id %}" class="btn btn-danger">Excluir</a>
-        </td>
+          <tr>
+            <td class="td-nome">
+              <a href="{% url 'usuario' pessoa.id %}">{{ pessoa.Nome }}</a>
+            </td>
+            <td class="td-email">{{ pessoa.Email }}</td>
+            <td>
+              <a href="{% url 'altContato' pessoa.id %}" class="btn btn-warning">Alterar</a>
+              <a href="{% url 'excContato' pessoa.id %}" class="btn btn-danger">Excluir</a>
+            </td>
+          </tr>
         {% endfor %}
-    </table>
-    
-
-
-</body>
+      </table>
+    </div>
+  </body>
 </html>
