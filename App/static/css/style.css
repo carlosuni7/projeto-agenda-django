@@ -2,9 +2,103 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    color: #FFFFFF;
+
 }
 
 body {
-    background: url('../imagens/naruto-bg.jpg');
+    background-color: #FFFFFF;
     color: #000;
+
+    min-height: 100vh;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+.bg-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 200px;
+    height: 200px;
+
+    z-index: -3;
+
+}
+
+.bg-header img {
+    width: 100%;
+}
+
+.header {
+
+    font-family: "Bebas Neue", sans-serif;
+
+    width: 100%;
+    min-width: 100%;
+    min-height: 200px;
+    height: 200px;
+    padding: 30px 60px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav-bar {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+
+.nav-bar .link {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+    transition: all .2s ease;
+}
+
+.link:hover {
+    color: #000;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.table-bg {
+    /* background: url('../imagens/bg-naruto-classic.jpg') center/cover no-repeat; */
+
+    width: fit-content;
+
+    padding: 20px 40px;
+}
+
+.table-main {
+    background-color: #FFFFFF;
+
+    color: #FFFFFF;
+}
+
+.table-main {
+    border-collapse: separate;
+    border-spacing: 7px 6px;
+    /* O segundo valor (10px) define o espaço vertical entre as linhas */
+}
+
+.table-main tr td {
+    padding: 8px 16px;
+}
+
+.td-nome {
+    background: linear-gradient(90deg, rgba(251, 148, 37) 0%, rgba(255, 98, 0) 100%);
+}
+
+.td-email {
+    background: linear-gradient(90deg, rgba(255, 98, 0) 0%, rgba(251, 148, 37) 100%);
 }
